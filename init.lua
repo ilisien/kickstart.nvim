@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -176,10 +176,17 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use i to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use k to move!!"<CR>')
+
+-- remap hjkl to jkil to be easier to reach
+-- vim.keymap.set('n', 'h', 'i', { noremap = true, silent = true }) -- h for insert
+-- vim.keymap.set('n', 'j', '<Left>', { noremap = true, silent = true }) -- j for left
+-- vim.keymap.set('n', 'k', '<Down>', { noremap = true, silent = true }) -- k for down
+-- vim.keymap.set('n', 'l', '<Right>', { noremap = true, silent = true }) -- l for right
+-- vim.keymap.set('n', 'i', '<Up>', { noremap = true, silent = true }) -- i for up
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
